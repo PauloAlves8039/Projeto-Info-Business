@@ -173,6 +173,9 @@
       <DependentUpon>FuncionarioDB.edmx</DependentUpon>
       <LastGenOutput>FuncionarioDB.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\FuncionarioDB.edmx">
@@ -182,6 +185,7 @@
     <Content Include="Models\FuncionarioDB.edmx.diagram">
       <DependentUpon>FuncionarioDB.edmx</DependentUpon>
     </Content>
+    <Content Include="Scripts\angular.min.js.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
