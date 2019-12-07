@@ -152,6 +152,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AngularJS\Funcionario\Controller.js" />
+    <Content Include="AngularJS\Funcionario\Model.js" />
+    <Content Include="AngularJS\Funcionario\Service.js" />
     <Content Include="App_Data\Funcionarios.mdf" />
     <Content Include="App_Data\Funcionarios_log.ldf">
       <DependentUpon>Funcionarios.mdf</DependentUpon>
