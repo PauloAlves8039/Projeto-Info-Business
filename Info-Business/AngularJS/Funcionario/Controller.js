@@ -23,7 +23,7 @@ funcionarioApp.controller('funcionarioCtrl', function ($scope, funcionarioServic
     $scope.adicionarFuncionario = function () {
         
         let funcionario = {
-            id: $scope.Id,
+            id: $scope.id,
             nome: $scope.nome,
             departamento: $scope.departamento,
             cargo: $scope.cargo,
@@ -36,14 +36,22 @@ funcionarioApp.controller('funcionarioCtrl', function ($scope, funcionarioServic
             if (d.data.success === true) {
                 carregarFuncionarios();
                 alert('Funcionário adicionado com sucesso!');
+                $scope.limparCampos();
             } else {
                 alert('Não foi possível adicionar Funcionário!');
             }
         },
             function () {
                 alert('Erro ao tentar adicionar Funcionário!');
-            }
-        );
+            });
+    }
+
+    $scope.limparCampos = function () {
+        $scope.id = "";
+        $scope.nome = "";
+        $scope.departamento = "";
+        $scope.cargo = "";
+        $scope.email = "";
     }
 
 });
