@@ -5,9 +5,10 @@
  * Data: 07/12/2019
 */
 
-carregarFuncionarios();
-
 funcionarioApp.controller('funcionarioCtrl', function ($scope, funcionarioService) {
+
+    carregarFuncionarios();
+
     function carregarFuncionarios() {
         let listaDeFuncionarios = funcionarioService.buscarTodosFuncionarios();
 
