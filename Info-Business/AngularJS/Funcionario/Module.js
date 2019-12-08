@@ -1,5 +1,5 @@
 ﻿/*
- * Arquivo: Model.js
+ * Arquivo: Module.js
  * Autor: Paulo Alves
  * Descrição: responsável pela utilização do módulo de 'funcionarios'
  * Data: 07/12/2019
