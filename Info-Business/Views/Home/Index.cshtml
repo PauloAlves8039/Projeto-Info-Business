@@ -1,6 +1,13 @@
 ﻿<div class="container" ng-controller="funcionarioCtrl">
     <div class="panel panel-info">
         <div class="panel-heading">Lista de Funcionários</div>
+
+        <div class="panel-body">
+            <button type="button" class="btn btn-info" data-target="#AdicionarFuncionario" data-toggle="modal">
+                <span class="glyphicon glyphicon-plus"></span>
+            </button>
+        </div>
+
         <table class="table table-bordered table-hover">
             <thead style="background-color: antiquewhite;">
                 <tr>
@@ -28,6 +35,42 @@
         </table>
     </div>
 
+    <div class="modal" id="AdicionarFuncionario" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="text-info">Adicionar Funcionário</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" name="AddNovoFuncionario">
+                        <div class="form-group">
+                            <input class="form-control" readonly="readonly" name="id" type="hidden"  placeholder="Id"/>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="nome" ng-model="nome" placeholder="Nome" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="departamento" ng-model="departamento" placeholder="Departamento" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="cargo" ng-model="cargo" placeholder="Cargo" />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="email" ng-model="email" placeholder="Email" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="adicionarFuncionario()">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 @section scripts { 
