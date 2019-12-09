@@ -21,7 +21,7 @@ funcionarioApp.controller('funcionarioCtrl', function ($scope, funcionarioServic
     }
 
     $scope.adicionarFuncionario = function () {
-        
+
         let funcionario = {
             id: $scope.id,
             nome: $scope.nome,
@@ -44,15 +44,55 @@ funcionarioApp.controller('funcionarioCtrl', function ($scope, funcionarioServic
             function () {
                 alert('Erro ao tentar adicionar Funcionário!');
             });
-    }
+    },
 
-    $scope.limparCampos = function () {
-        $scope.id = "";
-        $scope.nome = "";
-        $scope.departamento = "";
-        $scope.cargo = "";
-        $scope.email = "";
-    }
+        $scope.atualizarFuncionarioPorId = function (funcionario) {
+            $scope.atualizarId = funcionario.funcionarioId;
+            $scope.atualizarNome = funcionario.funcionarioNome;
+            $scope.atualizarDepartamento = funcionario.funcionarioDepartamento;
+            $scope.atualizarCargo = funcionario.funcionarioCargo;
+            $scope.atualizarEmail = funcionario.funcionarioEmail;
+        },
 
+        $scope.atualizarFuncionario = function () {
+            let funcionario = {
+                Id: $scope.atualizarId,
+                Nome: $scope.atualizarNome,
+                Departamento: $scope.atualizarDepartamento,
+                Cargo: $scope.atualizarCargo,
+                Email: $scope.atualizarEmail
+            };
+
+            let atualizar = funcionarioService.atualizarFuncionario(funcionario);
+
+            atualizar.then(function (d) {
+                if (d.data.success === true) {
+                    carregarFuncionarios();
+                    alert('Dados do funcionário atualizado com sucesso!');
+                    $scope.limparCamposAtualizados();
+                } else {
+                    alert('Dados não atualizados!');
+                }
+            },
+                function () {
+                    alert('Erro ao tentar atualizar Funcionário!');
+                });
+        },
+
+        $scope.limparCampos = function () {
+            $scope.id = "";
+            $scope.nome = "";
+            $scope.departamento = "";
+            $scope.cargo = "";
+            $scope.email = "";
+        };
+
+        $scope.limparCamposAtualizados = function () {
+            $scope.atualizarId = "";
+            $scope.atualizarNome = "";
+            $scope.atualizarDepartamento = "";
+            $scope.atualizarCargo = "";
+            $scope.atualizarEmail = "";
+        };
 });
 
