@@ -1,4 +1,8 @@
 ﻿<div class="container" ng-controller="funcionarioCtrl">
+    <div class="jumbotron">
+        <h1 style="text-align: center;"><span class="glyphicon glyphicon-leaf"></span> Info-Business</h1>
+    </div>
+
     <div class="panel panel-info">
         <div class="panel-heading">Lista de Funcionários</div>
 
@@ -6,6 +10,10 @@
             <button type="button" class="btn btn-info" data-target="#AdicionarFuncionario" data-toggle="modal">
                 <span class="glyphicon glyphicon-plus"></span>
             </button>
+        </div>
+
+        <div class="panel-body">
+            <input type="text" class="form-control" ng-model="busca.Nome" placeholder="Pesquisar" />
         </div>
 
         <table class="table table-bordered table-hover">
@@ -20,7 +28,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="func in Funcionarios">
+                <tr ng-repeat="func in Funcionarios | filter:busca">
                     <td class="text-center">{{func.Id}}</td>
                     <td class="text-center">{{func.Nome}}</td>
                     <td class="text-center">{{func.Departamento}}</td>
@@ -42,7 +50,7 @@
                     <h3 class="text-info">Adicionar Funcionário</h3>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal" name="AddNovoFuncionario">
+                    <form class="form-horizontal" name="AddNovoFuncionario" style="padding: 5px;">
                         <div class="form-group">
                             <input class="form-control" readonly="readonly" name="id" type="hidden"  placeholder="Id"/>
                         </div>
