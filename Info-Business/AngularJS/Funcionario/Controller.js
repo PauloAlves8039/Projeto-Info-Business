@@ -7,44 +7,44 @@
 
 funcionarioApp.controller('funcionarioCtrl', function ($scope, funcionarioService) {
 
-    carregarFuncionarios();
+        carregarFuncionarios();
 
-    function carregarFuncionarios() {
+        function carregarFuncionarios() {
 
-        let listaDeFuncionarios = funcionarioService.buscarTodosFuncionarios();
+            let listaDeFuncionarios = funcionarioService.buscarTodosFuncionarios();
 
-        listaDeFuncionarios.then(function (d) {
-            $scope.Funcionarios = d.data;
-        }, function () {
-            alert('Erro ao listar todos os funcionários');
-        });
-    }
-
-    $scope.adicionarFuncionario = function () {
-
-        let funcionario = {
-            id: $scope.id,
-            nome: $scope.nome,
-            departamento: $scope.departamento,
-            cargo: $scope.cargo,
-            email: $scope.email
-        };
-
-        let adicionar = funcionarioService.adicionarFuncionario(funcionario);
-
-        adicionar.then(function (d) {
-            if (d.data.success === true) {
-                carregarFuncionarios();
-                alert('Funcionário adicionado com sucesso!');
-                $scope.limparCampos();
-            } else {
-                alert('Não foi possível adicionar Funcionário!');
-            }
-        },
-            function () {
-                alert('Erro ao tentar adicionar Funcionário!');
+            listaDeFuncionarios.then(function (d) {
+                $scope.Funcionarios = d.data;
+            }, function () {
+                alert('Erro ao listar todos os funcionários');
             });
-    },
+        }
+
+        $scope.adicionarFuncionario = function () {
+
+            let funcionario = {
+                id: $scope.id,
+                nome: $scope.nome,
+                departamento: $scope.departamento,
+                cargo: $scope.cargo,
+                email: $scope.email
+            };
+
+            let adicionar = funcionarioService.adicionarFuncionario(funcionario);
+
+            adicionar.then(function (d) {
+                if (d.data.success === true) {
+                    carregarFuncionarios();
+                    alert('Funcionário adicionado com sucesso!');
+                    $scope.limparCampos();
+                } else {
+                    alert('Não foi possível adicionar Funcionário!');
+                }
+            },
+                function () {
+                    alert('Erro ao tentar adicionar Funcionário!');
+                });
+        },
 
         $scope.atualizarFuncionarioPorId = function (funcionario) {
             $scope.AtualizadoId = funcionario.Id;
@@ -77,6 +77,27 @@ funcionarioApp.controller('funcionarioCtrl', function ($scope, funcionarioServic
                 function () {
                     alert('Erro ao tentar atualizar Funcionário!');
                 });
+        },
+
+        $scope.excluirFuncionarioPorId = function (funcionario) {
+            $scope.AtualizadoId = funcionario.Id;
+            $scope.AtualizadoNome = funcionario.Nome;
+        },
+
+        $scope.excluirFuncionario = function (AtualizadoId) {
+            let excluir = funcionarioService.excluirFuncionario($scope.AtualizadoId);
+            excluir.then(function (d) {
+                if (d.data.success === true) {
+                    carregarFuncionarios();
+                    alert('Dados do funcionário excluído com sucesso!');
+                } else {
+                    alert('Dados não excluído!');
+                }
+            },
+                function () {
+                    alert('Erro ao tentar excluir Funcionário!');
+                }
+            );
         },
 
         $scope.limparCampos = function () {

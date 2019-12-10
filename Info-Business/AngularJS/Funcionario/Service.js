@@ -7,9 +7,9 @@
 
 funcionarioApp.service('funcionarioService', function ($http) {
 
-    this.buscarTodosFuncionarios = function () {
-        return $http.get("/Funcionario/SelecionarFuncionarios");
-    },
+        this.buscarTodosFuncionarios = function () {
+            return $http.get("/Funcionario/SelecionarFuncionarios");
+        },
 
         this.adicionarFuncionario = function (funcionario) {
             let request = $http({
@@ -27,6 +27,9 @@ funcionarioApp.service('funcionarioService', function ($http) {
                 data: funcionario
             });
             return request;
-        }
+        },
 
+        this.excluirFuncionario = function (AtualizadoId) {
+            return $http.post('/Funcionario/ExcluirFuncionario/' + AtualizadoId);
+        };
 });
