@@ -47,20 +47,20 @@ funcionarioApp.controller('funcionarioCtrl', function ($scope, funcionarioServic
     },
 
         $scope.atualizarFuncionarioPorId = function (funcionario) {
-            $scope.atualizarId = funcionario.funcionarioId;
-            $scope.atualizarNome = funcionario.funcionarioNome;
-            $scope.atualizarDepartamento = funcionario.funcionarioDepartamento;
-            $scope.atualizarCargo = funcionario.funcionarioCargo;
-            $scope.atualizarEmail = funcionario.funcionarioEmail;
+            $scope.AtualizadoId = funcionario.Id;
+            $scope.AtualizadoNome = funcionario.Nome;
+            $scope.AtualizadoDepartamento = funcionario.Departamento;
+            $scope.AtualizadoCargo = funcionario.Cargo;
+            $scope.AtualizadoEmail = funcionario.Email;
         },
 
         $scope.atualizarFuncionario = function () {
             let funcionario = {
-                Id: $scope.atualizarId,
-                Nome: $scope.atualizarNome,
-                Departamento: $scope.atualizarDepartamento,
-                Cargo: $scope.atualizarCargo,
-                Email: $scope.atualizarEmail
+                Id: $scope.AtualizadoId,
+                Nome: $scope.AtualizadoNome,
+                Departamento: $scope.AtualizadoDepartamento,
+                Cargo: $scope.AtualizadoCargo,
+                Email: $scope.AtualizadoEmail
             };
 
             let atualizar = funcionarioService.atualizarFuncionario(funcionario);
@@ -88,11 +88,11 @@ funcionarioApp.controller('funcionarioCtrl', function ($scope, funcionarioServic
         };
 
         $scope.limparCamposAtualizados = function () {
-            $scope.atualizarId = "";
-            $scope.atualizarNome = "";
-            $scope.atualizarDepartamento = "";
-            $scope.atualizarCargo = "";
-            $scope.atualizarEmail = "";
+            $scope.AtualizadoId = "";
+            $scope.AtualizadoNome = "";
+            $scope.AtualizadoDepartamento = "";
+            $scope.AtualizadoCargo = "";
+            $scope.AtualizadoEmail = "";
         };
 });
 

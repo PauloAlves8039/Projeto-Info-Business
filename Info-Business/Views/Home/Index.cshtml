@@ -35,50 +35,97 @@
                     <td class="text-center">{{func.Cargo}}</td>
                     <td class="text-center">{{func.Email}}</td>
                     <td class="text-center" style="width: 200px;">
-                        <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a>
-                        <a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+                        <a href="#" data-target="#AtualizarFuncionario" data-toggle="modal" class="btn btn-success" ng-click="atualizarFuncionarioPorId(func)">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                        <a href="#" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </a>
                     </td>
                 </tr>
             </tbody>
         </table>
+
+
+        <div class="modal" id="AdicionarFuncionario" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="text-info">Adicionar Funcionário</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" name="AddNovoFuncionario" style="padding: 5px;">
+                            <div class="form-group">
+                                <input class="form-control" readonly="readonly" name="id" type="hidden" placeholder="Id" />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="nome" ng-model="nome" placeholder="Nome" />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="departamento" ng-model="departamento" placeholder="Departamento" />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="cargo" ng-model="cargo" placeholder="Cargo" />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="email" ng-model="email" placeholder="Email" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="adicionarFuncionario()">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="modal" id="AdicionarFuncionario" role="dialog">
+    <div class="modal" id="AtualizarFuncionario" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="text-info">Adicionar Funcionário</h3>
+                    <h3 class="text-info">Atualizar Funcionário</h3>
                 </div>
-                <div class="modal-body">
-                    <form class="form-horizontal" name="AddNovoFuncionario" style="padding: 5px;">
+                <div class="modal-body" style="margin-left: 20px">
+                    <form class="form-horizontal" name="FrmAtualizar">
                         <div class="form-group">
-                            <input class="form-control" readonly="readonly" name="id" type="hidden"  placeholder="Id"/>
+                            <input class="form-control" readonly="readonly" name="Id" ng-model="AtualizadoId" type="hidden" placeholder="Funcionario Id" />
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" name="nome" ng-model="nome" placeholder="Nome" />
+                            <label class="text-info"> Nome</label>
+                            <input class="form-control" name="Nome" ng-model="AtualizadoNome" type="text" placeholder="Nome" />
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" name="departamento" ng-model="departamento" placeholder="Departamento" />
+                            <label class="text-info"> Departamento</label>
+                            <input class="form-control" name="Departamento" ng-model="AtualizadoDepartamento" type="text" placeholder="Departamento" />
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" name="cargo" ng-model="cargo" placeholder="Cargo" />
+                            <label class="text-info"> Cargo</label>
+                            <input class="form-control" name="Cargo" ng-model="AtualizadoCargo" type="text" placeholder="Cargo" />
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" name="email" ng-model="email" placeholder="Email" />
+                            <label class="text-info"> Email</label>
+                            <input class="form-control" name="Email" ng-model="AtualizadoEmail" type="email" placeholder="Email" />
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="adicionarFuncionario()">
-                        <span class="glyphicon glyphicon-ok"></span>
+                    <button type="button" class="btn btn-primary" id="btnUpdate" data-dismiss="modal" ng-click="atualizarFuncionario()">
+                        <span class="glyphicon glyphicon-pencil"></span>
                     </button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
                         <span class="glyphicon glyphicon-remove"></span>
                     </button>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 
 @section scripts { 
