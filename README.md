@@ -4,6 +4,7 @@ Repositório de uma aplicação web desenvolvida para fins didaticos, com objeti
 # Especificações
 - IDE Visual Studio Enterprise 2017 v15.9.17
 - Linguagem C#
+- ASP.NET MVC 5
 - Entity Framework 5.0 (ADO.NET Entity Data Model)
 - NET Framework 4.5.2
 - Microsoft SQL Server v13.00.4001
