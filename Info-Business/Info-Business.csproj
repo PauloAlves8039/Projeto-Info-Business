@@ -177,6 +177,11 @@
       <DependentUpon>FuncionarioDB.edmx</DependentUpon>
       <LastGenOutput>FuncionarioDB.cs</LastGenOutput>
     </Content>
+    <Content Include="Resources\github.png" />
+    <Content Include="Resources\gmail.png" />
+    <Content Include="Resources\linkedin.png" />
+    <Content Include="Resources\screenshot.png" />
+    <Content Include="Resources\twitter.png" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />

@@ -46,15 +46,14 @@
             </tbody>
         </table>
 
-
         <div class="modal" id="AdicionarFuncionario" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h3 class="text-info">Adicionar Funcionário</h3>
                     </div>
-                    <div class="modal-body">
-                        <form class="form-horizontal" name="AddNovoFuncionario" style="padding: 5px;">
+                    <div class="modal-body" id="modalForm">
+                        <form class="form-horizontal" name="AddNovoFuncionario">
                             <div class="form-group">
                                 <input class="form-control" readonly="readonly" name="id" type="hidden" placeholder="Id" />
                             </div>
@@ -91,7 +90,7 @@
                 <div class="modal-header">
                     <h3 class="text-info">Atualizar Funcionário</h3>
                 </div>
-                <div class="modal-body" style="margin-left: 20px">
+                <div class="modal-body" id="modalForm">
                     <form class="form-horizontal" name="FrmAtualizar">
                         <div class="form-group">
                             <input class="form-control" readonly="readonly" name="Id" ng-model="AtualizadoId" type="hidden" placeholder="Funcionario Id" />

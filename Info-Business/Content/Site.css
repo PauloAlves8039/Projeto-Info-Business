@@ -22,3 +22,7 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#modalForm {
+    margin-left: 20px;
+}
