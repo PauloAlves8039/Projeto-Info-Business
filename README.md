@@ -1,5 +1,5 @@
 # Projeto-Info-Business
-Repositório de uma aplicação web desenvolvida para fins didaticos, com objetivo de utilizar um CRUD para catalogar uma lista de funcionários de uma empresa fictícia.
+Repositório de uma aplicação web desenvolvida para fins didaticos, com objetivo de utilizar um CRUD com C#, ASP.NET MVC e AngularJS para catalogar uma lista de funcionários de uma empresa fictícia.
 
 # Especificações
 - IDE Visual Studio Enterprise 2017 v15.9.17
